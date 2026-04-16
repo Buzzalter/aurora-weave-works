@@ -3,8 +3,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import { AppLayout } from "@/components/AppLayout";
+import ImageGeneration from "@/pages/ImageGeneration";
+import ImageEditing from "@/pages/ImageEditing";
+import VideoGeneration from "@/pages/VideoGeneration";
+import FullBodyAnimation from "@/pages/FullBodyAnimation";
+import VoiceGeneration from "@/pages/VoiceGeneration";
+import LTXStudio from "@/pages/LTXStudio";
+import Gallery from "@/pages/Gallery";
+import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -14,11 +21,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AppLayout>
+          <Routes>
+            <Route path="/" element={<ImageGeneration />} />
+            <Route path="/edit" element={<ImageEditing />} />
+            <Route path="/video" element={<VideoGeneration />} />
+            <Route path="/animate" element={<FullBodyAnimation />} />
+            <Route path="/voice" element={<VoiceGeneration />} />
+            <Route path="/studio" element={<LTXStudio />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AppLayout>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
