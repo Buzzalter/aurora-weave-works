@@ -34,6 +34,9 @@ export const syncLip = (data: FormData) =>
 export const generateVoice = (data: FormData) =>
   api.post<TaskResponse>('/generate/voice', data);
 
+export const cloneVoice = (data: FormData) =>
+  api.post<TaskResponse>('/clone/voice', data);
+
 export const generateStudio = (data: FormData) =>
   api.post<TaskResponse>('/generate/studio', data);
 
