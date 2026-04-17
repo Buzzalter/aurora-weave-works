@@ -180,31 +180,6 @@ export default function ImageGeneration() {
           </div>
 
           <div className="space-y-2">
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Label className="cursor-help">Select LoRA</Label>
-              </TooltipTrigger>
-              <TooltipContent>Low-Rank Adaptation model for style transfer</TooltipContent>
-            </Tooltip>
-            <Select value={lora} onValueChange={setLora}>
-              <SelectTrigger><SelectValue /></SelectTrigger>
-              <SelectContent>
-                {LORAS.map((l) => <SelectItem key={l} value={l}>{l}</SelectItem>)}
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="space-y-2">
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Label className="cursor-help">LoRA Weight: {loraWeight[0]}</Label>
-              </TooltipTrigger>
-              <TooltipContent>Controls the influence of the LoRA style (0–1)</TooltipContent>
-            </Tooltip>
-            <Slider value={loraWeight} onValueChange={setLoraWeight} min={0} max={1} step={0.05} />
-          </div>
-
-          <div className="space-y-2">
             <Label>Aspect Ratio</Label>
             <ToggleGroup type="single" value={aspect} onValueChange={(v) => v && setAspect(v)} className="flex flex-wrap gap-1">
               {ASPECTS.map((a) => (
