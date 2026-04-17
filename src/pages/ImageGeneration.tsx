@@ -22,7 +22,6 @@ interface RefImage {
 export default function ImageGeneration() {
   const [prompt, setPrompt] = useState('');
   const [aspect, setAspect] = useState('1:1');
-  const [aspect, setAspect] = useState('1:1');
   const [preset, setPreset] = useState('None');
   const [refImages, setRefImages] = useState<RefImage[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
