@@ -16,9 +16,20 @@ import { toast } from 'sonner';
 import { Label } from '@/components/ui/label';
 import { Upload, X } from 'lucide-react';
 
-const LANGUAGES = ['English', 'Spanish', 'French', 'German', 'Italian', 'Japanese'];
+const LANGUAGES = ['English', 'French', 'German', 'Chinese', 'Russian', 'Turkish', 'Ukrainian', 'Algerian Arabic'];
 const GENDERS = ['Male', 'Female'];
-const ACCENTS = ['American', 'British', 'Australian', 'Indian'];
+const ACCENTS = [
+  'American Accent',
+  'Australian Accent',
+  'British Accent',
+  'Chinese Accent',
+  'Canadian Accent',
+  'Indian Accent',
+  'Korean Accent',
+  'Portuguese Accent',
+  'Russian Accent',
+  'Japanese Accent',
+];
 const PITCHES = ['High', 'Moderate', 'Low'];
 
 interface Props {
@@ -29,7 +40,7 @@ export function VoiceGenerationForm({ onGenerated }: Props) {
   const [script, setScript] = useState('');
   const [language, setLanguage] = useState('English');
   const [gender, setGender] = useState('Male');
-  const [accent, setAccent] = useState('American');
+  const [accent, setAccent] = useState('American Accent');
   const [pitch, setPitch] = useState('Moderate');
   const [referenceAudio, setReferenceAudio] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
