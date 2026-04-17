@@ -40,7 +40,7 @@ export function VoiceGenerationForm({ onGenerated }: Props) {
   const [script, setScript] = useState('');
   const [language, setLanguage] = useState('English');
   const [gender, setGender] = useState('Male');
-  const [accent, setAccent] = useState('American');
+  const [accent, setAccent] = useState('American Accent');
   const [pitch, setPitch] = useState('Moderate');
   const [referenceAudio, setReferenceAudio] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
