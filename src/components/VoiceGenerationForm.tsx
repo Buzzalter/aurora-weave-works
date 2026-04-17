@@ -16,9 +16,20 @@ import { toast } from 'sonner';
 import { Label } from '@/components/ui/label';
 import { Upload, X } from 'lucide-react';
 
-const LANGUAGES = ['English', 'Spanish', 'French', 'German', 'Italian', 'Japanese'];
+const LANGUAGES = ['English', 'French', 'German', 'Chinese', 'Russian', 'Turkish', 'Ukrainian', 'Algerian Arabic'];
 const GENDERS = ['Male', 'Female'];
-const ACCENTS = ['American', 'British', 'Australian', 'Indian'];
+const ACCENTS = [
+  'American Accent',
+  'Australian Accent',
+  'British Accent',
+  'Chinese Accent',
+  'Canadian Accent',
+  'Indian Accent',
+  'Korean Accent',
+  'Portuguese Accent',
+  'Russian Accent',
+  'Japanese Accent',
+];
 const PITCHES = ['High', 'Moderate', 'Low'];
 
 interface Props {
