@@ -18,6 +18,7 @@ import { Upload, X } from 'lucide-react';
 
 const LANGUAGES = ['English', 'French', 'German', 'Chinese', 'Russian', 'Turkish', 'Ukrainian', 'Algerian Arabic'];
 const GENDERS = ['Male', 'Female'];
+const AGES = ['Child', 'Teenager', 'Young Adult', 'Middle-Aged', 'Elderly'];
 const ACCENTS = [
   'American Accent',
   'Australian Accent',
@@ -30,7 +31,7 @@ const ACCENTS = [
   'Russian Accent',
   'Japanese Accent',
 ];
-const PITCHES = ['High', 'Moderate', 'Low'];
+const PITCHES = ['Very Low Pitch', 'Low Pitch', 'Moderate Pitch', 'High Pitch', 'Very High Pitch'];
 
 interface Props {
   onGenerated?: (url: string) => void;
@@ -40,8 +41,9 @@ export function VoiceGenerationForm({ onGenerated }: Props) {
   const [script, setScript] = useState('');
   const [language, setLanguage] = useState('English');
   const [gender, setGender] = useState('Male');
+  const [age, setAge] = useState('Young Adult');
   const [accent, setAccent] = useState('American Accent');
-  const [pitch, setPitch] = useState('Moderate');
+  const [pitch, setPitch] = useState('Moderate Pitch');
   const [referenceAudio, setReferenceAudio] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -58,6 +60,7 @@ export function VoiceGenerationForm({ onGenerated }: Props) {
       fd.append('text', script);
       fd.append('language', language);
       fd.append('gender', gender);
+      fd.append('age', age);
       fd.append('accent', accent);
       fd.append('pitch', pitch);
       const { data } = await generateVoice(fd);
@@ -136,6 +139,15 @@ export function VoiceGenerationForm({ onGenerated }: Props) {
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   {GENDERS.map((v) => <SelectItem key={v} value={v}>{v}</SelectItem>)}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label>Age</Label>
+              <Select value={age} onValueChange={setAge}>
+                <SelectTrigger><SelectValue /></SelectTrigger>
+                <SelectContent>
+                  {AGES.map((v) => <SelectItem key={v} value={v}>{v}</SelectItem>)}
                 </SelectContent>
               </Select>
             </div>
