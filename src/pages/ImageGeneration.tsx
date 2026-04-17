@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { GenerateButton } from '@/components/GenerateButton';
@@ -12,7 +11,6 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { Upload, X } from 'lucide-react';
 
-const LORAS = ['None', 'Realistic V4', 'Anime Style', 'Pixel Art', 'Watercolor', 'Cinematic'];
 const ASPECTS = ['1:1', '16:9', '9:16', '4:3', '3:4'];
 const PRESETS = ['None', 'Social Media'];
 
