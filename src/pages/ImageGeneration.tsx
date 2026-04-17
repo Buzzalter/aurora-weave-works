@@ -21,8 +21,7 @@ interface RefImage {
 
 export default function ImageGeneration() {
   const [prompt, setPrompt] = useState('');
-  const [lora, setLora] = useState('None');
-  const [loraWeight, setLoraWeight] = useState([0.8]);
+  const [aspect, setAspect] = useState('1:1');
   const [aspect, setAspect] = useState('1:1');
   const [preset, setPreset] = useState('None');
   const [refImages, setRefImages] = useState<RefImage[]>([]);
@@ -61,8 +60,6 @@ export default function ImageGeneration() {
     try {
       const fd = new FormData();
       fd.append('prompt', prompt);
-      fd.append('lora', lora);
-      fd.append('lora_weight', String(loraWeight[0]));
       fd.append('aspect_ratio', aspect);
       fd.append('preset', preset);
       refImages.forEach((img) => fd.append('reference_images', img.file));
